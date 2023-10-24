@@ -11,10 +11,20 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:idUser", async (req, res) => {
-  const { idUser } = req.params;
+// router.get("/:idUser", async (req, res) => {
+//   const { idUser } = req.params;
+//   try {
+//     const user = await usersManager.findById(idUser);
+//     res.status(200).json({ message: "User", user });
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
+
+router.get("/:email", async (req, res) => {
+  const { email } = req.params;
   try {
-    const user = await usersManager.findById(idUser);
+    const user = await usersManager.findByEmail(email);
     res.status(200).json({ message: "User", user });
   } catch (err) {
     res.status(500).json({ error: err.message });

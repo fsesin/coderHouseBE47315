@@ -7,7 +7,14 @@ class UsersManager {
   }
 
   async findById(id) {
-    const response = await usersModel.findById(id);
+    const response = await usersModel.findById(id).explain("executionStats");
+    return response;
+  }
+
+  async findByEmail(email) {
+    const response = await usersModel
+      .findOne({ email })
+      .explain("executionStats");
     return response;
   }
 
