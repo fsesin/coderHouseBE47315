@@ -5,6 +5,7 @@ import productsRouter from "./routes/products.router.js";
 import usersRouter from "./routes/users.router.js";
 import viewsRouter from "./routes/views.router.js";
 import cartsRouter from "./routes/carts.router.js";
+import clientsRouter from "./routes/clients.router.js";
 //DB
 import "./db/configDB.js";
 
@@ -24,6 +25,7 @@ app.use("/api/products", productsRouter);
 app.use("/api/users", usersRouter);
 app.use("/", viewsRouter);
 app.use("/api/carts", cartsRouter);
+app.use("/api/clients", clientsRouter);
 
 app.listen(8080, () => {
   console.log("Escuchando al puerto 8080");

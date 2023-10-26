@@ -8,15 +8,19 @@ class CartsManager {
   }
 
   async findCartById(idCart) {
-    const response = await cartsModel.findById(idCart);
+    const response = await cartsModel
+      .findById(idCart)
+      .populate("products.product", ["name", "price"]);
+    return response;
   }
 
   async addProductToCart(idCart, idProduct) {
     const cart = await cartsModel.findById(idCart);
-    // cart = {_Id:jfjgjg,products:[]}
-    const productIndex = cart.products.findIndex(
-      (p) => p.product === idProduct
+
+    const productIndex = cart.products.findIndex((p) =>
+      p.product.equals(idProduct)
     );
+
     if (productIndex === -1) {
       cart.products.push({ product: idProduct, quantity: 1 });
     } else {
