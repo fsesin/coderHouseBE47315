@@ -1,0 +1,22 @@
+{
+  "name": "clase25",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js prod",
+    "start:dev": "node src/app.js -m dev -p 3000",
+    "start:dev:debug": "node src/app.js -d true -m dev -p 3000",
+    "start:test": "node src/app.js -d true -m test -p 3000",
+    "start:prod": "node src/app.js -d true -m prod -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
