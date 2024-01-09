@@ -1,0 +1,13 @@
+{"level":"error","message":"Probando error"}
+{ message: 'Probando error', level: 'error' }
+{ message: 'Probando error', level: 'error' }
+{
+  message: 'Probando error',
+  level: 'error',
+  timestamp: '2024-01-09T00:18:57.405Z'
+}
+{
+  message: 'Probando error',
+  level: 'fatal',
+  timestamp: '2024-01-09T00:25:34.096Z'
+}
