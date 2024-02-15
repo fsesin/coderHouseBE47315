@@ -23,6 +23,15 @@ const usersSchema = new mongoose.Schema({
     type: [{ type: mongoose.SchemaTypes.ObjectId, ref: "Courses" }],
     default: [],
   },
+  documents: {
+    type: [
+      {
+        name: String,
+        reference: String,
+      },
+    ],
+    default: [],
+  },
 });
 
 export const usersModel = mongoose.model("Users", usersSchema);
